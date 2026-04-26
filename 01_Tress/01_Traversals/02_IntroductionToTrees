@@ -1,0 +1,27 @@
+1. Tress are non-linear hierarchical data structures
+2. Root -> head of the tree
+3. Children 
+4. Lead nodes -> who doesn't have any children
+5. Sub tree 
+6. Ancestores -> parent and grand parents 
+
+
+Types of binary trees:
+1. Full Binary Tree - every node has 0 or 2 childrens
+2. Complete binary Tree - all levels are completely filled except the last level and last level is filled as left as possible
+3. Perfect binary tree - all leaf nodes are at same level
+4. Balanced binary tree - height of the tree is at max log(n)
+5. Degenrate binary tree - skewed tree 
+
+Representation:
+
+struct Node {
+	int data;
+	Node *left;
+	Node *right;
+
+	Node(int val) {
+		data = val;
+		left = right = nullptr;
+	}
+};
