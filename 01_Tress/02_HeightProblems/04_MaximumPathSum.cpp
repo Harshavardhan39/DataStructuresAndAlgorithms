@@ -16,8 +16,10 @@ struct Node {
 int PathSum(Node *root, int &maximumSum) {
 	if (root == nullptr) return 0;
 
-	int leftSum = PathSum(root->left, maximumSum);
-	int rightSum = PathSum(root->right, maximumSum);
+	// if any of the path returns negative sum them ignore
+	// that path by taking 0
+	int leftSum = max(0, PathSum(root->left, maximumSum));
+	int rightSum = max(0, PathSum(root->right, maximumSum));
 
 	maximumSum = max(maximumSum, leftSum + rightSum + root->data);
 
